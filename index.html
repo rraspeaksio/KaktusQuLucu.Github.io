@@ -702,8 +702,7 @@
         <!-- Detail berganti otomatis lewat script.js sesuai metode dipilih -->
         <div class="payment-detail-item" data-detail="bank">
           <h4>Transfer Bank</h4>
-          <p>BCA <strong>1234567890</strong> a.n. KaktusQuLucu Official</p>
-          <p>BNI <strong>0987654321</strong> a.n. KaktusQuLucu Official</p>
+          <p>BCA <strong>7340121664</strong> a.n. Kartina Ika Sari</p>
           <p class="payment-note">Konfirmasi transfer via WhatsApp setelah checkout ya 🌵</p>
         </div>
         <div class="payment-detail-item" data-detail="ewallet" hidden>
@@ -769,6 +768,141 @@
 </footer>
 
 <button class="to-top" id="toTop" aria-label="Kembali ke atas">↑</button>
+
+<!-- ================= OVERLAY (dipakai keranjang & checkout) ================= -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+
+<!-- ================= KERANJANG (DRAWER) ================= -->
+<aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Keranjang belanja">
+  <div class="cart-drawer-head">
+    <h3><svg width="20" height="20"><use href="#icon-cart"/></svg> Keranjang Kamu</h3>
+    <button class="icon-btn" id="cartCloseBtn" aria-label="Tutup keranjang">
+      <svg width="20" height="20"><use href="#icon-close"/></svg>
+    </button>
+  </div>
+
+  <div class="cart-drawer-body" id="cartItems">
+    <!-- Diisi otomatis oleh script.js -->
+    <p class="cart-empty" id="cartEmptyMsg">Keranjang masih kosong. Yuk pilih kaktus favoritmu dulu 🌵</p>
+  </div>
+
+  <div class="cart-drawer-foot">
+    <div class="cart-total-row">
+      <span>Subtotal</span>
+      <strong id="cartSubtotal">Rp0</strong>
+    </div>
+    <p class="cart-note">Ongkir & diskon grosir dihitung admin saat konfirmasi.</p>
+    <button class="btn btn-primary btn-block" id="goToCheckoutBtn" disabled>Lanjut ke Pembayaran</button>
+    <button class="btn btn-ghost btn-block" id="continueShoppingBtn">Lanjut Belanja</button>
+  </div>
+</aside>
+
+<!-- ================= CHECKOUT (MODAL) ================= -->
+<div class="checkout-modal" id="checkoutModal" aria-hidden="true" aria-label="Checkout">
+  <div class="checkout-box">
+    <div class="checkout-head">
+      <h3>Checkout</h3>
+      <button class="icon-btn" id="checkoutCloseBtn" aria-label="Tutup checkout">
+        <svg width="20" height="20"><use href="#icon-close"/></svg>
+      </button>
+    </div>
+
+    <div class="checkout-body">
+
+      <!-- Ringkasan pesanan -->
+      <section class="checkout-section">
+        <h4>Ringkasan Pesanan</h4>
+        <div id="checkoutItems" class="checkout-items"></div>
+        <div class="cart-total-row cart-total-row--big">
+          <span>Total</span>
+          <strong id="checkoutTotal">Rp0</strong>
+        </div>
+      </section>
+
+      <!-- Data pembeli -->
+      <section class="checkout-section">
+        <h4>Data Pembeli</h4>
+        <div class="checkout-form">
+          <label>Nama Lengkap
+            <input type="text" id="buyerName" placeholder="Nama kamu" required>
+          </label>
+          <label>No. WhatsApp
+            <input type="tel" id="buyerPhone" placeholder="08xxxxxxxxxx" required>
+          </label>
+          <label>Alamat Pengiriman
+            <textarea id="buyerAddress" rows="2" placeholder="Alamat lengkap + kode pos" required></textarea>
+          </label>
+          <label>Wilayah Tujuan (estimasi ongkir)
+            <select id="shippingZone">
+              <option value="0">Ambil di tempat / COD area toko — Gratis</option>
+              <option value="15000">Cibubur & sekitarnya (Kota Wisata, Cileungsi, Bekasi) — Rp15.000</option>
+              <option value="20000">Jabodetabek lainnya — Rp20.000</option>
+              <option value="35000">Jawa (luar Jabodetabek) — Rp35.000</option>
+              <option value="55000">Luar Jawa — Rp55.000</option>
+            </select>
+          </label>
+          <label>Catatan (opsional)
+            <textarea id="buyerNote" rows="2" placeholder="Custom tema, warna, request tulisan kartu, dll."></textarea>
+          </label>
+        </div>
+      </section>
+
+      <!-- Metode pembayaran -->
+      <section class="checkout-section">
+        <h4>Metode Pembayaran</h4>
+        <div class="payment-grid payment-grid--checkout" id="checkoutPaymentGrid">
+          <button class="payment-card is-active" data-pay="bank" type="button">
+            <svg width="24" height="24"><use href="#icon-bank"/></svg>
+            <span>Transfer Bank</span>
+            <small>BCA · BNI · BRI · Mandiri</small>
+          </button>
+          <button class="payment-card" data-pay="ewallet" type="button">
+            <svg width="24" height="24"><use href="#icon-wallet"/></svg>
+            <span>E-Wallet</span>
+            <small>GoPay · OVO · DANA · ShopeePay</small>
+          </button>
+          <button class="payment-card" data-pay="qris" type="button">
+            <svg width="24" height="24"><use href="#icon-qr"/></svg>
+            <span>QRIS</span>
+            <small>Semua e-wallet & m-banking</small>
+          </button>
+          <button class="payment-card" data-pay="cod" type="button">
+            <svg width="24" height="24"><use href="#icon-cod"/></svg>
+            <span>COD</span>
+            <small>Bayar saat kaktus tiba</small>
+          </button>
+        </div>
+
+        <div class="payment-detail" id="checkoutPaymentDetail">
+          <div class="payment-detail-item" data-detail="bank">
+            <h4>Transfer Bank</h4>
+            <p>BCA <strong>7340121664</strong> a.n. Kartina Ika Sari</p>
+          </div>
+          <div class="payment-detail-item" data-detail="ewallet" hidden>
+            <h4>E-Wallet</h4>
+            <p>GoPay / DANA / OVO <strong>0812-3456-7890</strong> a.n. KaktusQuLucu</p>
+          </div>
+          <div class="payment-detail-item" data-detail="qris" hidden>
+            <h4>QRIS</h4>
+            <p>Kode QRIS dikirimkan admin lewat WhatsApp setelah pesanan masuk.</p>
+          </div>
+          <div class="payment-detail-item" data-detail="cod" hidden>
+            <h4>COD (Bayar di Tempat)</h4>
+            <p>Tersedia untuk area tertentu. Siapkan uang pas saat kurir tiba.</p>
+          </div>
+        </div>
+      </section>
+
+      <p class="checkout-error" id="checkoutError" hidden>Yuk lengkapi nama, no. WhatsApp, dan alamat dulu ya 🌵</p>
+
+      <button class="btn btn-primary btn-block" id="sendOrderBtn">
+        <svg width="18" height="18"><use href="#icon-cod"/></svg>
+        Kirim Pesanan via WhatsApp
+      </button>
+      <p class="checkout-hint">Tombol di atas membuka WhatsApp dengan rincian pesananmu, tinggal kirim ke Admin KaktusQuLucu.</p>
+    </div>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
