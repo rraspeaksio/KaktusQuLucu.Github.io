@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KaktusQuLucu — Kaktus Mini, Bikin Hati Adem</title>
+<meta name="description" content="Toko kaktus online KaktusQuLucu. Kaktus mini lucu, sehat, dan siap dikirim ke seluruh Indonesia.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= SPRITE SVG (ikon dipakai berulang) ================= -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="icon-cactus" viewBox="0 0 64 64">
+    <rect x="26" y="18" width="12" height="34" rx="6" fill="currentColor"/>
+    <rect x="12" y="26" width="10" height="20" rx="5" fill="currentColor"/>
+    <rect x="42" y="22" width="10" height="24" rx="5" fill="currentColor"/>
+    <path d="M14 52 L50 52 L46 58 L18 58 Z" fill="currentColor" opacity=".55"/>
+  </symbol>
+  <symbol id="icon-cart" viewBox="0 0 24 24">
+    <path d="M3 4h2l2.4 12.4A2 2 0 0 0 9.36 18H18a2 2 0 0 0 1.95-1.56L21.5 9H6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="9.5" cy="21.5" r="1.6" fill="currentColor"/>
+    <circle cx="17.5" cy="21.5" r="1.6" fill="currentColor"/>
+  </symbol>
+  <symbol id="icon-heart" viewBox="0 0 24 24">
+    <path d="M12 20.5s-7.6-4.6-10-9.3C.5 7.8 2.3 4.5 5.7 4c2.1-.3 4.1.8 6.3 3.2C14.2 4.8 16.2 3.7 18.3 4c3.4.5 5.2 3.8 3.7 7.2-2.4 4.7-10 9.3-10 9.3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="icon-menu" viewBox="0 0 24 24">
+    <path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="icon-close" viewBox="0 0 24 24">
+    <path d="M5 5l14 14M19 5 5 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="icon-leaf" viewBox="0 0 24 24">
+    <path d="M4 20c8-1 14-7 15-15-8 1-14 7-15 15Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M6 18c3-3 6.5-6.5 12-11.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="icon-drop" viewBox="0 0 24 24">
+    <path d="M12 3c4 5 7 8.6 7 12.2A7 7 0 0 1 5 15.2C5 11.6 8 8 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="icon-box" viewBox="0 0 24 24">
+    <path d="M3 8 12 4l9 4-9 4-9-4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M3 8v9l9 4V12M21 8v9l-9 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="icon-shield" viewBox="0 0 24 24">
+    <path d="M12 3l7 3v6c0 5-3.4 8.4-7 9-3.6-.6-7-4-7-9V6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="icon-bank" viewBox="0 0 24 24">
+    <path d="M3 10 12 4l9 6M4 10v9M9 10v9M15 10v9M20 10v9M2 20h20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="icon-wallet" viewBox="0 0 24 24">
+    <rect x="3" y="6" width="18" height="13" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    <path d="M3 9h18" stroke="currentColor" stroke-width="1.6"/>
+    <circle cx="17" cy="13.5" r="1.4" fill="currentColor"/>
+  </symbol>
+  <symbol id="icon-qr" viewBox="0 0 24 24">
+    <rect x="3" y="3" width="6" height="6" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    <rect x="15" y="3" width="6" height="6" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    <rect x="3" y="15" width="6" height="6" rx="1" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    <rect x="15" y="15" width="2.5" height="2.5" fill="currentColor"/>
+    <rect x="18.5" y="15" width="2.5" height="2.5" fill="currentColor"/>
+    <rect x="15" y="18.5" width="2.5" height="2.5" fill="currentColor"/>
+    <rect x="18.5" y="18.5" width="2.5" height="2.5" fill="currentColor"/>
+  </symbol>
+  <symbol id="icon-cod" viewBox="0 0 24 24">
+    <path d="M3 12h18M3 12l4-4M3 12l4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="9" y="6" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+  </symbol>
+  <symbol id="icon-sun" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    <g stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+      <line x1="12" y1="2" x2="12" y2="4.2"/>
+      <line x1="12" y1="19.8" x2="12" y2="22"/>
+      <line x1="2" y1="12" x2="4.2" y2="12"/>
+      <line x1="19.8" y1="12" x2="22" y2="12"/>
+      <line x1="4.9" y1="4.9" x2="6.4" y2="6.4"/>
+      <line x1="17.6" y1="17.6" x2="19.1" y2="19.1"/>
+      <line x1="4.9" y1="19.1" x2="6.4" y2="17.6"/>
+      <line x1="17.6" y1="6.4" x2="19.1" y2="4.9"/>
+    </g>
+  </symbol>
+  <symbol id="icon-soil" viewBox="0 0 24 24">
+    <path d="M3 17c2-3 5-4 9-4s7 1 9 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M12 13V6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M12 9c0-2 2-3 3-3-1 2-1 3-3 3Z" fill="currentColor"/>
+  </symbol>
+  <symbol id="icon-wind" viewBox="0 0 24 24">
+    <path d="M2 8h11a3 3 0 1 0-2.5-4.7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M2 13h15a3 3 0 1 1-2.5 4.7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M2 18h8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="icon-nowater" viewBox="0 0 24 24">
+    <path d="M12 3c4 5 7 8.6 7 12.2A7 7 0 0 1 5 15.2C5 11.6 8 8 12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+    <line x1="5" y1="20" x2="19" y2="6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="icon-fertilizer" viewBox="0 0 24 24">
+    <path d="M8 3h8l2 4v11a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V7Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+    <path d="M8 3l-1 4M16 3l1 4M7 7h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M12 11v6M9.5 13.5c0-1.4 1.1-2.5 2.5-2.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+  </symbol>
+</svg>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a href="#beranda" class="logo">
+      <svg class="logo-mark" viewBox="0 0 64 64" width="34" height="34" aria-hidden="true"><use href="#icon-cactus"/></svg>
+      <span>Kaktus<em>Qu</em>Lucu</span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="#koleksi">Koleksi</a>
+      <a href="#kenapa-kami">Kenapa Kami</a>
+      <a href="#cara-merawat">Cara Merawat</a>
+      <a href="#cara-belanja">Cara Belanja</a>
+      <a href="#pembayaran">Pembayaran</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="cartBtn" aria-label="Keranjang belanja">
+        <svg width="22" height="22"><use href="#icon-cart"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="icon-btn nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
+        <svg width="24" height="24"><use href="#icon-menu"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="beranda">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <span class="sand-dot d1"></span><span class="sand-dot d2"></span><span class="sand-dot d3"></span>
+      <span class="sand-dot d4"></span><span class="sand-dot d5"></span>
+    </div>
+
+    <div class="wrap hero-inner">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Kebun Kaktus Online 🌵</p>
+        <h1>Kaktus Kecil yang Bikin Rumahmu Makin&nbsp;<span class="accent-underline">Hidup</span></h1>
+        <p class="hero-desc">Nggak perlu jago berkebun. Kaktus mini dari KaktusQuLucu gampang dirawat, tahan lupa disiram,
+          dan datang dalam pot-pot yang gemesin. Cocok buat meja kerja, kamar, sampai hadiah buat sahabat.</p>
+        <div class="hero-cta">
+          <a href="#koleksi" class="btn btn-primary">Lihat Koleksi Kaktus</a>
+          <a href="#cara-belanja" class="btn btn-ghost">Cara Belanja</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>500+</strong><span>Kaktus terkirim</span></div>
+          <div><strong>4.9/5</strong><span>Rating pembeli</span></div>
+          <div><strong>30+</strong><span>Jenis kaktus</span></div>
+        </div>
+      </div>
+
+      <div class="hero-art reveal" aria-hidden="true">
+        <svg viewBox="0 0 460 420" class="hero-svg">
+          <ellipse cx="230" cy="392" rx="190" ry="16" fill="#E4D5B4" opacity=".6"/>
+
+          <!-- Pot kiri: kaktus saguaro kecil -->
+          <g class="pot-group pot-sway pot-sway--1">
+            <path d="M70 300 L150 300 L140 360 L80 360 Z" fill="#C97D53"/>
+            <path d="M70 300 L150 300 L146 314 L74 314 Z" fill="#B5673F"/>
+            <rect x="98" y="230" width="24" height="76" rx="12" fill="#4F7A45"/>
+            <rect x="80" y="255" width="16" height="40" rx="8" fill="#5C8A50"/>
+            <rect x="124" y="245" width="16" height="46" rx="8" fill="#5C8A50"/>
+            <g stroke="#EFE7D3" stroke-width="1.4" stroke-linecap="round">
+              <line x1="103" y1="238" x2="103" y2="244"/><line x1="112" y1="238" x2="112" y2="244"/>
+              <line x1="103" y1="260" x2="103" y2="266"/><line x1="112" y1="260" x2="112" y2="266"/>
+              <line x1="103" y1="282" x2="103" y2="288"/><line x1="112" y1="282" x2="112" y2="288"/>
+            </g>
+          </g>
+
+          <!-- Pot tengah: kaktus bulat berbunga (elemen utama) -->
+          <g class="pot-group pot-sway pot-sway--2">
+            <path d="M175 320 L285 320 L270 384 L190 384 Z" fill="#DC8F5C"/>
+            <path d="M175 320 L285 320 L280 336 L180 336 Z" fill="#C97D53"/>
+            <circle cx="230" cy="266" r="54" fill="#6C9A55"/>
+            <circle cx="230" cy="266" r="54" fill="url(#barrelShade)"/>
+            <g stroke="#EFE7D3" stroke-width="1.6" stroke-linecap="round" opacity=".85">
+              <line x1="230" y1="216" x2="230" y2="224"/>
+              <line x1="196" y1="238" x2="202" y2="244"/>
+              <line x1="264" y1="238" x2="258" y2="244"/>
+              <line x1="182" y1="266" x2="190" y2="266"/>
+              <line x1="278" y1="266" x2="270" y2="266"/>
+              <line x1="196" y1="294" x2="202" y2="288"/>
+              <line x1="264" y1="294" x2="258" y2="288"/>
+            </g>
+            <g class="bloom">
+              <circle cx="230" cy="212" r="14" fill="#E8527A"/>
+              <circle cx="230" cy="212" r="6" fill="#F7C948"/>
+            </g>
+          </g>
+
+          <!-- Pot kanan: kaktus telinga kelinci -->
+          <g class="pot-group pot-sway pot-sway--3">
+            <path d="M320 312 L400 312 L390 366 L330 366 Z" fill="#C97D53"/>
+            <path d="M320 312 L400 312 L396 326 L324 326 Z" fill="#B5673F"/>
+            <ellipse cx="345" cy="288" rx="20" ry="26" fill="#5C8A50"/>
+            <ellipse cx="378" cy="278" rx="17" ry="22" fill="#4F7A45"/>
+            <circle cx="345" cy="304" r="3" fill="#E8527A"/>
+          </g>
+
+          <defs>
+            <radialGradient id="barrelShade" cx="35%" cy="30%" r="75%">
+              <stop offset="0%" stop-color="#8CBB6E"/>
+              <stop offset="100%" stop-color="#4F7A45"/>
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TRUST STRIP ================= -->
+  <section class="trust-strip">
+    <div class="wrap trust-grid">
+      <div class="trust-item"><svg width="20" height="20"><use href="#icon-box"/></svg> Packing anti guncang</div>
+      <div class="trust-item"><svg width="20" height="20"><use href="#icon-leaf"/></svg> Kaktus sehat terjamin</div>
+      <div class="trust-item"><svg width="20" height="20"><use href="#icon-shield"/></svg> Garansi sampai tujuan</div>
+      <div class="trust-item"><svg width="20" height="20"><use href="#icon-drop"/></svg> Panduan rawat gratis</div>
+    </div>
+  </section>
+
+  <!-- ================= KOLEKSI / PRODUK ================= -->
+  <section class="section" id="koleksi">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Katalog Produk</p>
+        <h2>Katalog Kaktus &amp; Terrarium</h2>
+        <p class="section-desc">Rangkuman lini <strong>Little Gift</strong> (terrarium series) dan
+          <strong>Katalog Custom</strong> KaktusQuLucu. Semua tanaman (kaktus/sukulen) dikirim dalam kondisi
+          random sesuai stok, dan bisa custom tema, warna, serta jumlah — termasuk harga grosir untuk
+          pemesanan ≥100 pcs.</p>
+      </div>
+
+      <!-- Filter kategori -->
+      <div class="filter-bar reveal" id="filterBar">
+        <button class="chip is-active" data-filter="all">Semua</button>
+        <button class="chip" data-filter="terrarium">Terrarium Series</button>
+        <button class="chip" data-filter="souvenir">Souvenir &amp; Hampers</button>
+      </div>
+
+      <!-- ============================================================
+           KATALOG PRODUK — sumber: Katalog "The Living Gift Collection"
+           (lini Little Gift / terrarium series) & "Katalog Custom"
+           (souvenir Tipe A sampai K). Duplikat satu blok product-card
+           untuk menambah produk baru, atau edit langsung nama/desc/harga di sini.
+      ============================================================= -->
+
+      <div class="product-grid" id="productGrid">
+
+        <!-- ============ TERRARIUM SERIES (lini Little Gift) ============ -->
+
+        <article class="product-card reveal" data-category="terrarium">
+          <div class="product-thumb">
+            <span class="product-badge">Best Seller</span>
+            <button class="wish-btn" aria-label="Simpan ke favorit"><svg width="18" height="18"><use href="#icon-heart"/></svg></button>
+            <img src="img/terrarium-sand-art.jpg" alt="Mini Terrarium Sand Art dalam gelas sloki dengan lapisan pasir warna-warni dan kaktus mini">
+          </div>
+          <div class="product-info">
+            <span class="category-tag">Little Gift · 01</span>
+            <h3>Mini Terrarium Sand Art</h3>
+            <p class="product-desc">Gelas sloki diameter 5–6 cm, dekorasi pasir warna-warni & kaktus mini. Kemasan dus putih/kraft, dilengkapi pipet dan kartu ucapan (custom).</p>
+            <ul class="price-list">
+              <li><span>1–49 pcs</span><b>Rp35.000</b></li>
+              <li><span>50–99 pcs</span><b>Rp32.500</b></li>
+              <li><span>≥100 pcs</span><b>Rp30.000</b></li>
+            </ul>
+            <div class="product-bottom">
+              <span class="price">Rp35.000<small> /pcs</small></span>
+              <button class="btn-add" data-name="Mini Terrarium Sand Art">+ Keranjang</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="terrarium">
+          <div class="product-thumb">
+            <button class="wish-btn" aria-label="Simpan ke favorit"><svg width="18" height="18"><use href="#icon-heart"/></svg></button>
+            <img src="img/ecosystem-jar-akrilik.jpg" alt="Mini Ecosystem Jar Akrilik berbentuk egg dan square berisi kaktus, sukulen, dan lumut">
+          </div>
+          <div class="product-info">
+            <span class="category-tag">Little Gift · 02</span>
+            <h3>Mini Ecosystem Jar Akrilik</h3>
+            <p class="product-desc">Wadah akrilik bentuk egg / square, kombinasi kaktus, sukulen & lumut. Dilengkapi pipet, kartu ucapan & miniatur dekorasi (tema custom).</p>
+            <ul class="price-list">
+              <li><span>1–49 pcs</span><b>Rp35.000</b></li>
+              <li><span>50–99 pcs</span><b>Rp32.500</b></li>
+              <li><span>≥100 pcs</span><b>Rp30.000</b></li>
+            </ul>
+            <div class="product-bottom">
+              <span class="price">Rp35.000<small> /pcs</small></span>
+              <button class="btn-add" data-name="Mini Ecosystem Jar Akrilik">+ Keranjang</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="terrarium">
+          <div class="product-thumb">
+            <span class="product-badge product-badge--new">Favorit</span>
+            <button class="wish-btn" aria-label="Simpan ke favorit"><svg width="18" height="18"><use href="#icon-heart"/></svg></button>
+            <img src="img/botol-terrarium.jpg" alt="Botol Terrarium kaca bertutup kayu dengan dekorasi pasir, bebatuan, dan lumut, dihias pita">
+          </div>
+          <div class="product-info">
+            <span class="category-tag">Little Gift · 03</span>
+            <h3>Botol Terrarium</h3>
+            <p class="product-desc">Botol kaca tutup kayu, dekorasi pasir & bebatuan, lumut. Dilengkapi pipet, pinset, pita akrilik & panduan perawatan.</p>
+            <ul class="price-list">
+              <li><span>Lengkap + miniatur (100 ml)</span><b>Rp35.000</b></li>
+              <li><span>Tanpa miniatur (100 ml)</span><b>Rp30.000</b></li>
+              <li><span>Ukuran 30 ml</span><b>Rp25.000</b></li>
+            </ul>
+            <p class="price-note">Harga grosir ≥100 pcs mulai Rp20.000/pcs.</p>
+            <div class="product-bottom">
+              <span class="price">Rp25.000<small> /pcs</small></span>
+              <button class="btn-add" data-name="Botol Terrarium">+ Keranjang</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="terrarium">
+          <div class="product-thumb">
+            <button class="wish-btn" aria-label="Simpan ke favorit"><svg width="18" height="18"><use href="#icon-heart"/></svg></button>
+            <img src="img/ecosystem-wine-whiskey.jpg" alt="Mini Ecosystem Glass Wine atau Whiskey berisi sukulen, kayu apung, dan miniatur rumah">
+          </div>
+          <div class="product-info">
+            <span class="category-tag">Little Gift · 04</span>
+            <h3>Mini Ecosystem — Wine/Whiskey Glass</h3>
+            <p class="product-desc">Gelas kaca whiskey/wine ±9,5×10,2 cm, dekorasi pasir & lanskap, kaktus/sukulen pilihan, lengkap miniatur rumah & animal.</p>
+            <ul class="price-list">
+              <li><span>1–49 pcs</span><b>Rp75.000</b></li>
+              <li><span>50–99 pcs</span><b>Rp70.000</b></li>
+              <li><span>≥100 pcs</span><b>Rp65.000</b></li>
+            </ul>
+            <p class="price-note">Harga tanpa miniatur menyesuaikan; belum termasuk tatakan kayu.</p>
+            <div class="product-bottom">
+              <span class="price">Rp75.000<small> /pcs</small></span>
+              <button class="btn-add" data-name="Mini Ecosystem Wine/Whiskey Glass">+ Keranjang</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="terrarium">
+          <div class="product-thumb">
+            <button class="wish-btn" aria-label="Simpan ke favorit"><svg width="18" height="18"><use href="#icon-heart"/></svg></button>
+            <img src="img/ecosystem-vas-bulat.jpg" alt="Mini Ecosystem Glass Vas Bulat berisi kaktus dan sukulen dengan pasir berwarna">
+          </div>
+          <div class="product-info">
+            <span class="category-tag">Little Gift · 05</span>
+            <h3>Mini Ecosystem — Vas Bulat</h3>
+            <p class="product-desc">Vas kaca bulat 250–300 ml, dekorasi pasir & lanskap, kaktus/sukulen pilihan, lengkap miniatur rumah/animal.</p>
+            <ul class="price-list">
+              <li><span>1–49 pcs</span><b>Rp85.000</b></li>
+              <li><span>50–99 pcs</span><b>Rp82.500</b></li>
+              <li><span>≥100 pcs</span><b>Rp80.000</b></li>
+            </ul>
+            <p class="price-note">Belum termasuk tatakan kayu.</p>
+            <div class="product-bottom">
+              <span class="price">Rp85.000<small> /pcs</small></span>
+              <button class="btn-add" data-name="Mini Ecosystem Vas Bulat">+ Keranjang</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="terrarium">
+          <div class="product-thumb">
+            <button class="wish-btn" aria-label="Simpan ke favorit"><svg width="18" height="18"><use href="#icon-heart"/></svg></button>
+            <img src="img/sandart-whiskey.jpg" alt="Sand Art Whiskey Glass berisi tanaman lidah mertua dengan lapisan pasir warna-warni">
+          </div>
+          <div class="product-info">
+            <span class="category-tag">Little Gift · 06</span>
+            <h3>Sand Art — Whiskey Glass</h3>
+            <p class="product-desc">Gelas whiskey diameter 9,5 cm, tinggi 10,5 cm, dekorasi pasir warna custom, kaktus/sukulen pilihan.</p>
+            <ul class="price-list">
+              <li><span>1–49 pcs</span><b>Rp85.000</b></li>
+              <li><span>50–99 pcs</span><b>Rp82.500</b></li>
+              <li><span>≥100 pcs</span><b>Rp80.000</b></li>
+            </ul>
+            <p class="price-note">Kemasan tas mika +Rp8.000.</p>
+            <div class="product-bottom">
+              <span class="price">Rp85.000<small> /pcs</small></span>
+              <button class="btn-add" data-name="Sand Art Whiskey Glass">+ Keranjang</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="terrarium">
+          <div class="product-thumb">
+            <button class="wish-btn" aria-label="Simpan ke favorit"><svg width="18" height="18"><use href="#icon-heart"/></svg></button>
+            <img src="img/sandart-goblet.jpg" alt="Sand Art Goblet Glass tiga gelas kaki berisi kaktus dan sukulen dengan pasir warna-warni">
+          </div>
+          <div class="product-info">
+            <span class="category-tag">Little Gift · 06</span>
+            <h3>Sand Art — Goblet Glass</h3>
+            <p class="product-desc">Gelas goblet diameter atas 7 cm, tinggi 15 cm, dekorasi pasir warna custom, kaktus/sukulen pilihan.</p>
+            <ul class="price-list">
+              <li><span>1–49 pcs</span><b>Rp85.000</b></li>
+              <li><span>50–99 pcs</span><b>Rp82.500</b></li>
+              <li><span>≥100 pcs</span><b>Rp80.000</b></li>
+            </ul>
+            <p class="price-note">Kemasan tas mika +Rp8.000.</p>
+            <div class="product-bottom">
+              <span class="price">Rp85.000<small> /pcs</small></span>
+              <button class="btn-add" data-name="Sand Art Goblet Glass">+ Keranjang</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- ============ SOUVENIR & HAMPERS (Katalog Custom Tipe A–K) ============ -->
+
+        <article class="product-card reveal" data-category="souvenir">
+          <div class="product-thumb">
+            <span class="product-badge">Tipe A</span>
+            <button class="wish-btn" aria-label="Simpan ke favorit"><svg width="18" height="18"><use href="#icon-heart"/></svg></button>
+            <img src="img/souvenir-paperbag-a.jpg" alt="Souvenir succulent cactus dalam pot gypsum mini dengan pilihan kemasan paper bag">
+          </div>
+          <div class="product-info">
+            <span class="category-tag">Souvenir · Tipe A</span>
+            <h3>Souvenir Paper Bag</h3>
+            <p class="product-desc">Sukulen/kaktus random (howarthia, echinopsis, euphorbia, dorstenia), pot gypsum 6,5 cm, dus tenteng 10×10×14 cm, free cetak kartu.</p>
+            <ul class="price-list">
+              <li><span>Dus tenteng kraft</span><b>Rp30.000</b></li>
+              <li><span>Dus tenteng putih</span><b>Rp33.000</b></li>
+              <li><span>Kotak gypsum mini</span><b>Rp22.000</b></li>
+              <li><span>Kotak MDF segitiga</span><b>Rp25.000</b></li>
+            </ul>
+            <div class="product-bottom">
+              <span class="price">Rp22.000<small> /pcs</small></span>
+              <button class="btn-add" data-name="Souvenir Paper Bag Tipe A">+ Keranjang</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="souvenir">
+          <div class="product-thumb">
+            <span class="product-badge">Tipe B</span>
+            <button class="wish-btn" aria-label="Simpan ke favorit"><svg width="18" height="18"><use href="#icon-heart"/></svg></button>
+            <img src="img/souvenir-gagang-b.jpg" alt="Souvenir succulent cactus dalam pot semen warna pastel berjajar di baki kayu">
+          </div>
+          <div class="product-info">
+            <span class="category-tag">Souvenir · Tipe B</span>
+            <h3>Souvenir Paper Bag Gagang Mini</h3>
+            <p class="product-desc">Sukulen/kaktus random, pot semen diameter 5 cm, free cetak kartu ucapan (desain custom).</p>
+            <ul class="price-list">
+              <li><span>Paper bag gagang</span><b>Rp15.000</b></li>
+              <li><span>Paper bag lipat</span><b>Rp12.500</b></li>
+            </ul>
+            <div class="product-bottom">
+              <span class="price">Rp12.500<small> /pcs</small></span>
+              <button class="btn-add" data-name="Souvenir Paper Bag Gagang Tipe B">+ Keranjang</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="souvenir">
+          <div class="product-thumb">
+            <span class="product-badge">Tipe C</span>
+            <button class="wish-btn" aria-label="Simpan ke favorit"><svg width="18" height="18"><use href="#icon-heart"/></svg></button>
+            <img src="img/souvenir-pvc-bouquet-c.jpg" alt="Souvenir succulent dibungkus kain flanel pink dengan tas PVC bening">
+          </div>
+          <div class="product-info">
+            <span class="category-tag">Souvenir · Tipe C</span>
+            <h3>Souvenir Bag PVC & Bouquet</h3>
+            <p class="product-desc">Sukulen/kaktus random & request (jika stok tersedia), pot plastik 9–10 cm, dekorasi pot, panduan perawatan.</p>
+            <ul class="price-list">
+              <li><span>Packing bag PVC 16×16×8 cm</span><b>Rp35.000</b></li>
+              <li><span>Packing bag bouquet 12,5×12×8 cm</span><b>Rp32.000</b></li>
+            </ul>
+            <div class="product-bottom">
+              <span class="price">Rp32.000<small> /pcs</small></span>
+              <button class="btn-add" data-name="Souvenir Bag PVC & Bouquet Tipe C">+ Keranjang</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="souvenir">
+          <div class="product-thumb">
+            <span class="product-badge">Tipe D</span>
+            <button class="wish-btn" aria-label="Simpan ke favorit"><svg width="18" height="18"><use href="#icon-heart"/></svg></button>
+            <img src="img/souvenir-rotan-hati-d.jpg" alt="Souvenir sukulen dalam keranjang rotan bergagang berbentuk hati">
+          </div>
+          <div class="product-info">
+            <span class="category-tag">Souvenir · Tipe D</span>
+            <h3>Souvenir Keranjang Rotan</h3>
+            <p class="product-desc">Sukulen/kaktus random & request, pot plastik 9–10 cm, keranjang rotan 12×15×9 cm, panduan perawatan.</p>
+            <ul class="price-list">
+              <li><span>Varian 1</span><b>Rp45.000</b></li>
+              <li><span>Varian 2</span><b>Rp43.000</b></li>
+            </ul>
+            <div class="product-bottom">
+              <span class="price">Rp43.000<small> /pcs</small></span>
+              <button class="btn-add" data-name="Souvenir Keranjang Rotan Tipe D">+ Keranjang</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="souvenir">
+          <div class="product-thumb">
+            <span class="product-badge">Tipe E</span>
+            <button class="wish-btn" aria-label="Simpan ke favorit"><svg width="18" height="18"><use href="#icon-heart"/></svg></button>
+            <img src="img/souvenir-rotan-telur-e.jpg" alt="Empat keranjang rotan telur mini dengan pita untuk souvenir sukulen">
+          </div>
+          <div class="product-info">
+            <span class="category-tag">Souvenir · Tipe E</span>
+            <h3>Souvenir Keranjang Rotan Telur</h3>
+            <p class="product-desc">Sukulen/kaktus random & request, pot plastik diameter 8 cm, keranjang rotan telur 8×6×14 cm, free cetak kartu.</p>
+            <div class="product-bottom">
+              <span class="price">Rp30.000<small> /pcs</small></span>
+              <button class="btn-add" data-name="Souvenir Keranjang Rotan Telur Tipe E">+ Keranjang</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="souvenir">
+          <div class="product-thumb">
+            <span class="product-badge">Tipe F/G</span>
+            <button class="wish-btn" aria-label="Simpan ke favorit"><svg width="18" height="18"><use href="#icon-heart"/></svg></button>
+            <img src="img/souvenir-terrarium-jar-fg.jpg" alt="Tiga jar terrarium mini berisi kaktus dan sukulen berjajar">
+          </div>
+          <div class="product-info">
+            <span class="category-tag">Souvenir · Tipe F–G</span>
+            <h3>Souvenir Terrarium Jar Mini</h3>
+            <p class="product-desc">Sukulen/kaktus random & request, jar kaca/Tuscany 6–9,5 cm, tatak kayu, panduan perawatan, kemasan dus kraft/akrilik.</p>
+            <ul class="price-list">
+              <li><span>Jar Tuscany 9,5×7×10 cm</span><b>Rp45.000</b></li>
+              <li><span>Jar 8 cm, dus 10×10×14,5 cm</span><b>Rp35.000</b></li>
+              <li><span>Jar 6 cm, dus akrilik 9×8,5×8 cm</span><b>Rp26.000</b></li>
+            </ul>
+            <p class="price-note">Tambah tatak kayu +Rp2.000.</p>
+            <div class="product-bottom">
+              <span class="price">Rp26.000<small> /pcs</small></span>
+              <button class="btn-add" data-name="Souvenir Terrarium Jar Mini Tipe F/G">+ Keranjang</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="souvenir">
+          <div class="product-thumb">
+            <span class="product-badge">Tipe G</span>
+            <button class="wish-btn" aria-label="Simpan ke favorit"><svg width="18" height="18"><use href="#icon-heart"/></svg></button>
+            <img src="img/souvenir-bambu-hoki-g.jpg" alt="Dua jar kaca berisi tanaman bambu hoki dengan hiasan kerikil">
+          </div>
+          <div class="product-info">
+            <span class="category-tag">Souvenir · Tipe G</span>
+            <h3>Souvenir Bambu Hoki</h3>
+            <p class="product-desc">Tanaman bambu hoki 3 batang, jar kaca dengan kerikil, dus packing akrilik, free cetak kartu ucapan.</p>
+            <ul class="price-list">
+              <li><span>Jar besar, dus 10×10×25 cm</span><b>Rp40.000</b></li>
+              <li><span>Jar kecil, dus 9,5×9,5×21,5 cm</span><b>Rp35.000</b></li>
+            </ul>
+            <p class="price-note">Tambah tatak kayu +Rp2.000.</p>
+            <div class="product-bottom">
+              <span class="price">Rp35.000<small> /pcs</small></span>
+              <button class="btn-add" data-name="Souvenir Bambu Hoki Tipe G">+ Keranjang</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="souvenir">
+          <div class="product-thumb">
+            <span class="product-badge">Tipe H/I</span>
+            <button class="wish-btn" aria-label="Simpan ke favorit"><svg width="18" height="18"><use href="#icon-heart"/></svg></button>
+            <img src="img/souvenir-potplastik-h.jpg" alt="Souvenir kaktus dalam pot plastik dengan paper bag dan kartu ucapan Thank You">
+          </div>
+          <div class="product-info">
+            <span class="category-tag">Souvenir · Tipe H–I</span>
+            <h3>Souvenir Pot Plastik</h3>
+            <p class="product-desc">Sukulen/kaktus random & request, pot plastik diameter 8 cm, panduan perawatan, free cetak kartu & penyiram.</p>
+            <ul class="price-list">
+              <li><span>Tipe H</span><b>Rp20.000</b></li>
+              <li><span>Tipe I</span><b>Rp25.000</b></li>
+            </ul>
+            <div class="product-bottom">
+              <span class="price">Rp20.000<small> /pcs</small></span>
+              <button class="btn-add" data-name="Souvenir Pot Plastik Tipe H/I">+ Keranjang</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="souvenir">
+          <div class="product-thumb">
+            <span class="product-badge">Tipe J</span>
+            <button class="wish-btn" aria-label="Simpan ke favorit"><svg width="18" height="18"><use href="#icon-heart"/></svg></button>
+            <img src="img/souvenir-mika-pot-j.jpg" alt="Tiga pot plastik berisi sukulen dengan kemasan mika dan kartu ucapan">
+          </div>
+          <div class="product-info">
+            <span class="category-tag">Souvenir · Tipe J</span>
+            <h3>Souvenir Pot Plastik — Mika</h3>
+            <p class="product-desc">Sukulen/kaktus random, pot plastik lubang 8 cm tinggi 8–9 cm, mika packaging & pita, free cetak kartu.</p>
+            <ul class="price-list">
+              <li><span>Tanpa renda</span><b>Rp30.000</b></li>
+              <li><span>Plus renda</span><b>Rp32.500</b></li>
+              <li><span>Kemasan karung goni</span><b>Rp35.000</b></li>
+            </ul>
+            <div class="product-bottom">
+              <span class="price">Rp30.000<small> /pcs</small></span>
+              <button class="btn-add" data-name="Souvenir Pot Plastik Mika Tipe J">+ Keranjang</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="souvenir">
+          <div class="product-thumb">
+            <span class="product-badge">Tipe K</span>
+            <button class="wish-btn" aria-label="Simpan ke favorit"><svg width="18" height="18"><use href="#icon-heart"/></svg></button>
+            <img src="img/souvenir-mika-bouquet-k.jpg" alt="Souvenir sukulen dibungkus bouquet mika warna pink dengan pita renda">
+          </div>
+          <div class="product-info">
+            <span class="category-tag">Souvenir · Tipe K</span>
+            <h3>Souvenir Tas Mika Bouquet</h3>
+            <p class="product-desc">Sukulen/kaktus dibungkus bouquet mika, dekorasi pita & kartu ucapan (custom), pot plastik atau gerabah tanah liat.</p>
+            <ul class="price-list">
+              <li><span>Pot plastik</span><b>Rp35.000</b></li>
+              <li><span>Pot gerabah tanah liat</span><b>Rp50.000</b></li>
+            </ul>
+            <div class="product-bottom">
+              <span class="price">Rp35.000<small> /pcs</small></span>
+              <button class="btn-add" data-name="Souvenir Tas Mika Bouquet Tipe K">+ Keranjang</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+      <!-- ============================================================ -->
+
+      <p class="catalog-footnote reveal">🌵 Semua produk menerima <strong>satuan & grosir (≥100 pcs)</strong>,
+        custom tema/warna/jenis tanaman untuk souvenir acara, corporate gift, hampers & celebration.
+        Sumber: Katalog Produk KaktusQuLucu — <em>The Living Gift Collection</em> & <em>Katalog Custom</em>.</p>
+
+      <p class="empty-state" id="emptyState" hidden>Belum ada produk di kategori ini 🌱</p>
+    </div>
+  </section>
+
+  <!-- ================= KENAPA KAMI ================= -->
+  <section class="section section-tinted" id="kenapa-kami">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Kenapa KaktusQuLucu</p>
+        <h2>Belanja Kaktus Tanpa Drama</h2>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon"><svg width="26" height="26"><use href="#icon-leaf"/></svg></div>
+          <h3>Kaktus Sehat Pilihan</h3>
+          <p>Setiap kaktus dicek satu-satu sebelum dikirim, jadi dijamin segar dan bebas hama.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon"><svg width="26" height="26"><use href="#icon-box"/></svg></div>
+          <h3>Packing Aman</h3>
+          <p>Dibungkus kokoh pakai sekat karton dan media tanam kering, aman meski jarak jauh.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon"><svg width="26" height="26"><use href="#icon-shield"/></svg></div>
+          <h3>Garansi Tumbuh</h3>
+          <p>Kaktus layu di perjalanan? Kami ganti baru, gratis tanpa ribet.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon"><svg width="26" height="26"><use href="#icon-drop"/></svg></div>
+          <h3>Panduan Perawatan</h3>
+          <p>Setiap paket dilengkapi kartu tips rawat, cocok buat pemula sekalipun.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CARA MERAWAT ================= -->
+  <section class="section" id="cara-merawat">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Panduan Perawatan</p>
+        <h2>Cara Merawat Kaktus &amp; Sukulen</h2>
+        <p class="section-desc">Simple, mudah &amp; menyenangkan! Ikuti 6 langkah dasar ini supaya kaktus di rumahmu tumbuh sehat.</p>
+      </div>
+
+      <div class="care-grid">
+        <div class="care-card reveal">
+          <span class="care-num">1</span>
+          <div class="feature-icon"><svg width="26" height="26"><use href="#icon-sun"/></svg></div>
+          <h3>Cahaya Matahari</h3>
+          <p>Letakkan di tempat yang mendapat cahaya matahari cukup. Hindari panas terik langsung di siang hari.</p>
+        </div>
+        <div class="care-card reveal">
+          <span class="care-num">2</span>
+          <div class="feature-icon"><svg width="26" height="26"><use href="#icon-drop"/></svg></div>
+          <h3>Siram dengan Bijak</h3>
+          <p>Siram 2–3x seminggu atau saat media tanam dalam keadaan kering.</p>
+        </div>
+        <div class="care-card reveal">
+          <span class="care-num">3</span>
+          <div class="feature-icon"><svg width="26" height="26"><use href="#icon-soil"/></svg></div>
+          <h3>Media Tanam</h3>
+          <p>Gunakan media yang berpori &amp; cepat kering (campuran tanah, pasir malang, sekam bakar/kerikil).</p>
+        </div>
+        <div class="care-card reveal">
+          <span class="care-num">4</span>
+          <div class="feature-icon"><svg width="26" height="26"><use href="#icon-wind"/></svg></div>
+          <h3>Sirkulasi Udara</h3>
+          <p>Tempatkan di area bersirkulasi udara baik agar tanaman tidak lembap &amp; terhindar dari jamur. Sebaiknya ada perputaran arus angin.</p>
+        </div>
+        <div class="care-card reveal">
+          <span class="care-num">5</span>
+          <div class="feature-icon"><svg width="26" height="26"><use href="#icon-nowater"/></svg></div>
+          <h3>Hindari Air di Tubuh</h3>
+          <p>Jangan sampai air menggenang di batang dan daun agar tidak menyebabkan busuk.</p>
+        </div>
+        <div class="care-card reveal">
+          <span class="care-num">6</span>
+          <div class="feature-icon"><svg width="26" height="26"><use href="#icon-fertilizer"/></svg></div>
+          <h3>Pemupukan</h3>
+          <p>Berikan pupuk khusus kaktus &amp; sukulen setiap 1–2 bulan sekali saat masa tumbuh (musim panas).</p>
+        </div>
+      </div>
+
+      <div class="care-bottom">
+        <div class="care-tips reveal">
+          <p class="care-tips-title">Tips Tambahan</p>
+          <ul class="care-tips-list">
+            <li>Rotasi pot secara berkala agar tumbuh seimbang.</li>
+            <li>Bersihkan debu pada tanaman dengan kuas lembut.</li>
+            <li>Perhatikan perubahan warna &amp; tekstur tanaman.</li>
+            <li>Rawat tanaman sebagai mahluk hidup yang kadang sehat dan sakit.</li>
+          </ul>
+        </div>
+        <blockquote class="care-quote reveal">
+          “Setiap tanaman punya karakternya sendiri. Bertumbuh bukan cuma soal mekar, tapi juga tentang pulih dan beradaptasi.”
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CARA BELANJA ================= -->
+  <section class="section" id="cara-belanja">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Cara Belanja</p>
+        <h2>Tiga Langkah, Kaktus Sampai Rumah</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <span class="step-num">1</span>
+          <h3>Pilih Kaktus</h3>
+          <p>Jelajahi koleksi, masukkan kaktus favoritmu ke keranjang.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step-num">2</span>
+          <h3>Isi Data & Bayar</h3>
+          <p>Isi alamat pengiriman, pilih metode pembayaran yang paling gampang.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step-num">3</span>
+          <h3>Kaktus Dikirim</h3>
+          <p>Pesanan dikemas rapi dan dikirim, tinggal tunggu di rumah.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= METODE PEMBAYARAN ================= -->
+  <section class="section section-tinted" id="pembayaran">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Metode Pembayaran</p>
+        <h2>Bayar Sesukamu, Semua Aman</h2>
+        <p class="section-desc">Pilih salah satu metode di bawah saat checkout. Nomor rekening / akun
+          akan ditampilkan otomatis setelah kamu memilih.</p>
+      </div>
+
+      <div class="payment-grid" id="paymentGrid">
+        <button class="payment-card is-active" data-pay="bank">
+          <svg width="24" height="24"><use href="#icon-bank"/></svg>
+          <span>Transfer Bank</span>
+          <small>BCA · BNI · BRI · Mandiri</small>
+        </button>
+        <button class="payment-card" data-pay="ewallet">
+          <svg width="24" height="24"><use href="#icon-wallet"/></svg>
+          <span>E-Wallet</span>
+          <small>GoPay · OVO · DANA · ShopeePay</small>
+        </button>
+        <button class="payment-card" data-pay="qris">
+          <svg width="24" height="24"><use href="#icon-qr"/></svg>
+          <span>QRIS</span>
+          <small>Semua e-wallet & m-banking</small>
+        </button>
+        <button class="payment-card" data-pay="cod">
+          <svg width="24" height="24"><use href="#icon-cod"/></svg>
+          <span>COD</span>
+          <small>Bayar saat kaktus tiba</small>
+        </button>
+      </div>
+
+      <div class="payment-detail" id="paymentDetail">
+        <!-- Detail berganti otomatis lewat script.js sesuai metode dipilih -->
+        <div class="payment-detail-item" data-detail="bank">
+          <h4>Transfer Bank</h4>
+          <p>BCA <strong>7340121664</strong> a.n. Kartina Ika Sari</p>
+          <p class="payment-note">Konfirmasi transfer via WhatsApp setelah checkout ya 🌵</p>
+        </div>
+        <div class="payment-detail-item" data-detail="ewallet" hidden>
+          <h4>E-Wallet</h4>
+          <p>GoPay / DANA / OVO <strong>0812-3456-7890</strong> a.n. KaktusQuLucu</p>
+          <p class="payment-note">Screenshot bukti bayar dan kirim ke WhatsApp Admin.</p>
+        </div>
+        <div class="payment-detail-item" data-detail="qris" hidden>
+          <h4>QRIS</h4>
+          <p>Scan kode QRIS di halaman checkout memakai aplikasi bank atau e-wallet apa saja.</p>
+        </div>
+        <div class="payment-detail-item" data-detail="cod" hidden>
+          <h4>COD (Bayar di Tempat)</h4>
+          <p>Tersedia untuk area tertentu. Siapkan uang pas saat kurir tiba, ya!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA BAWAH ================= -->
+  <section class="cta-banner">
+    <div class="wrap cta-inner reveal">
+      <h2>Yuk, Adopsi Kaktus Pertamamu 🌵</h2>
+      <p>Ribuan kaktus sudah menemani meja kerja dan kamar orang lain. Giliran kamu sekarang.</p>
+      <a href="#koleksi" class="btn btn-light">Belanja Sekarang</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer" id="kontak">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a href="#beranda" class="logo logo--footer">
+        <svg class="logo-mark" viewBox="0 0 64 64" width="30" height="30" aria-hidden="true"><use href="#icon-cactus"/></svg>
+        <span>Kaktus<em>Qu</em>Lucu</span>
+      </a>
+      <p>Toko kaktus mini online. Dikirim dengan cinta dari kebun kami ke rumahmu.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Jelajahi</h4>
+      <a href="#koleksi">Koleksi</a>
+      <a href="#kenapa-kami">Kenapa Kami</a>
+      <a href="#cara-merawat">Cara Merawat</a>
+      <a href="#pembayaran">Pembayaran</a>
+    </div>
+    <div class="footer-col">
+      <h4>Bantuan</h4>
+      <a href="#cara-belanja">Cara Belanja</a>
+      <a href="#">Kebijakan Pengembalian</a>
+      <a href="#">Pertanyaan Umum</a>
+    </div>
+    <div class="footer-col">
+      <h4>Kontak</h4>
+      <a href="#">WhatsApp: 0812-3456-7890</a>
+      <a href="#">Instagram: @kaktusqulucu</a>
+      <a href="#">Email: halo@kaktusqulucu.id</a>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>© 2026 KaktusQuLucu. Dibuat dengan 🌵 dan secangkir kopi.</p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Kembali ke atas">↑</button>
+
+<!-- ================= OVERLAY (dipakai keranjang & checkout) ================= -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+
+<!-- ================= KERANJANG (DRAWER) ================= -->
+<aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Keranjang belanja">
+  <div class="cart-drawer-head">
+    <h3><svg width="20" height="20"><use href="#icon-cart"/></svg> Keranjang Kamu</h3>
+    <button class="icon-btn" id="cartCloseBtn" aria-label="Tutup keranjang">
+      <svg width="20" height="20"><use href="#icon-close"/></svg>
+    </button>
+  </div>
+
+  <div class="cart-drawer-body" id="cartItems">
+    <!-- Diisi otomatis oleh script.js -->
+    <p class="cart-empty" id="cartEmptyMsg">Keranjang masih kosong. Yuk pilih kaktus favoritmu dulu 🌵</p>
+  </div>
+
+  <div class="cart-drawer-foot">
+    <div class="cart-total-row">
+      <span>Subtotal</span>
+      <strong id="cartSubtotal">Rp0</strong>
+    </div>
+    <p class="cart-note">Ongkir & diskon grosir dihitung admin saat konfirmasi.</p>
+    <button class="btn btn-primary btn-block" id="goToCheckoutBtn" disabled>Lanjut ke Pembayaran</button>
+    <button class="btn btn-ghost btn-block" id="continueShoppingBtn">Lanjut Belanja</button>
+  </div>
+</aside>
+
+<!-- ================= CHECKOUT (MODAL) ================= -->
+<div class="checkout-modal" id="checkoutModal" aria-hidden="true" aria-label="Checkout">
+  <div class="checkout-box">
+    <div class="checkout-head">
+      <h3>Checkout</h3>
+      <button class="icon-btn" id="checkoutCloseBtn" aria-label="Tutup checkout">
+        <svg width="20" height="20"><use href="#icon-close"/></svg>
+      </button>
+    </div>
+
+    <div class="checkout-body">
+
+      <!-- Ringkasan pesanan -->
+      <section class="checkout-section">
+        <h4>Ringkasan Pesanan</h4>
+        <div id="checkoutItems" class="checkout-items"></div>
+        <div class="cart-total-row cart-total-row--big">
+          <span>Total</span>
+          <strong id="checkoutTotal">Rp0</strong>
+        </div>
+      </section>
+
+      <!-- Data pembeli -->
+      <section class="checkout-section">
+        <h4>Data Pembeli</h4>
+        <div class="checkout-form">
+          <label>Nama Lengkap
+            <input type="text" id="buyerName" placeholder="Nama kamu" required>
+          </label>
+          <label>No. WhatsApp
+            <input type="tel" id="buyerPhone" placeholder="08xxxxxxxxxx" required>
+          </label>
+          <label>Alamat Pengiriman
+            <textarea id="buyerAddress" rows="2" placeholder="Alamat lengkap + kode pos" required></textarea>
+          </label>
+          <label>Wilayah Tujuan (estimasi ongkir)
+            <select id="shippingZone">
+              <option value="0">Ambil di tempat / COD area toko — Gratis</option>
+              <option value="15000">Cibubur & sekitarnya (Kota Wisata, Cileungsi, Bekasi) — Rp15.000</option>
+              <option value="20000">Jabodetabek lainnya — Rp20.000</option>
+              <option value="35000">Jawa (luar Jabodetabek) — Rp35.000</option>
+              <option value="55000">Luar Jawa — Rp55.000</option>
+            </select>
+          </label>
+          <label>Catatan (opsional)
+            <textarea id="buyerNote" rows="2" placeholder="Custom tema, warna, request tulisan kartu, dll."></textarea>
+          </label>
+        </div>
+      </section>
+
+      <!-- Metode pembayaran -->
+      <section class="checkout-section">
+        <h4>Metode Pembayaran</h4>
+        <div class="payment-grid payment-grid--checkout" id="checkoutPaymentGrid">
+          <button class="payment-card is-active" data-pay="bank" type="button">
+            <svg width="24" height="24"><use href="#icon-bank"/></svg>
+            <span>Transfer Bank</span>
+            <small>BCA · BNI · BRI · Mandiri</small>
+          </button>
+          <button class="payment-card" data-pay="ewallet" type="button">
+            <svg width="24" height="24"><use href="#icon-wallet"/></svg>
+            <span>E-Wallet</span>
+            <small>GoPay · OVO · DANA · ShopeePay</small>
+          </button>
+          <button class="payment-card" data-pay="qris" type="button">
+            <svg width="24" height="24"><use href="#icon-qr"/></svg>
+            <span>QRIS</span>
+            <small>Semua e-wallet & m-banking</small>
+          </button>
+          <button class="payment-card" data-pay="cod" type="button">
+            <svg width="24" height="24"><use href="#icon-cod"/></svg>
+            <span>COD</span>
+            <small>Bayar saat kaktus tiba</small>
+          </button>
+        </div>
+
+        <div class="payment-detail" id="checkoutPaymentDetail">
+          <div class="payment-detail-item" data-detail="bank">
+            <h4>Transfer Bank</h4>
+            <p>BCA <strong>7340121664</strong> a.n. Kartina Ika Sari</p>
+          </div>
+          <div class="payment-detail-item" data-detail="ewallet" hidden>
+            <h4>E-Wallet</h4>
+            <p>GoPay / DANA / OVO <strong>0812-3456-7890</strong> a.n. KaktusQuLucu</p>
+          </div>
+          <div class="payment-detail-item" data-detail="qris" hidden>
+            <h4>QRIS</h4>
+            <p>Kode QRIS dikirimkan admin lewat WhatsApp setelah pesanan masuk.</p>
+          </div>
+          <div class="payment-detail-item" data-detail="cod" hidden>
+            <h4>COD (Bayar di Tempat)</h4>
+            <p>Tersedia untuk area tertentu. Siapkan uang pas saat kurir tiba.</p>
+          </div>
+        </div>
+      </section>
+
+      <p class="checkout-error" id="checkoutError" hidden>Yuk lengkapi nama, no. WhatsApp, dan alamat dulu ya 🌵</p>
+
+      <button class="btn btn-primary btn-block" id="sendOrderBtn">
+        <svg width="18" height="18"><use href="#icon-cod"/></svg>
+        Kirim Pesanan via WhatsApp
+      </button>
+      <p class="checkout-hint">Tombol di atas membuka WhatsApp dengan rincian pesananmu, tinggal kirim ke Admin KaktusQuLucu.</p>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
