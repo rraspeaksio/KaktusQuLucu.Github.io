@@ -168,6 +168,11 @@ p{ margin:0 0 1em; }
   background:linear-gradient(145deg,var(--sand-100),var(--sand-50));
   overflow:hidden;
 }
+.product-thumb img{
+  width:100%; height:100%; object-fit:cover; display:block;
+  transition:transform .5s var(--ease-bounce);
+}
+.product-card:hover .product-thumb img{ transform:scale(1.08); }
 .product-thumb-icon{ color:var(--green-500); transition:transform .4s var(--ease-bounce); }
 .product-card:hover .product-thumb-icon{ transform:scale(1.12) rotate(-4deg); }
 .product-badge{
@@ -185,14 +190,40 @@ p{ margin:0 0 1em; }
 .product-info{ padding:18px 20px 20px; display:flex; flex-direction:column; gap:6px; flex:1; }
 .product-info h3{ font-size:1.08rem; margin-bottom:.15em; }
 .product-desc{ font-size:.87rem; color:var(--soil-600); margin-bottom:auto; }
-.product-bottom{ display:flex; align-items:center; justify-content:space-between; margin-top:14px; }
+
+.category-tag{
+  display:inline-block; align-self:flex-start; font-size:.68rem; font-weight:700; letter-spacing:.03em;
+  text-transform:uppercase; color:var(--green-700); background:var(--sand-100);
+  padding:3px 10px; border-radius:999px; margin-bottom:2px;
+}
+
+.price-list{
+  list-style:none; margin:10px 0 0; padding:10px 0 0; border-top:1px dashed var(--sand-line);
+  display:flex; flex-direction:column; gap:5px;
+}
+.price-list li{
+  display:flex; align-items:baseline; justify-content:space-between; gap:10px; font-size:.8rem;
+}
+.price-list li span{ color:var(--soil-600); }
+.price-list li b{ color:var(--green-900); font-weight:700; white-space:nowrap; }
+
+.price-note{ font-size:.74rem; color:var(--soil-600); font-style:italic; margin:6px 0 0; }
+
+.product-bottom{ display:flex; align-items:center; justify-content:space-between; margin-top:14px; gap:10px; }
 .price{ font-family:var(--font-display); font-weight:600; color:var(--green-900); font-size:1.05rem; }
+.price small{ font-family:var(--font-body); font-weight:500; color:var(--soil-600); font-size:.68rem; }
 .btn-add{
   background:var(--sand-100); color:var(--green-900); font-weight:700; font-size:.82rem;
-  padding:9px 16px; border-radius:999px; transition:all .25s var(--ease-bounce);
+  padding:9px 16px; border-radius:999px; transition:all .25s var(--ease-bounce); white-space:nowrap;
 }
 .btn-add:hover{ background:var(--green-700); color:#fff; transform:scale(1.05); }
 .btn-add.is-added{ background:var(--bloom-500); color:#fff; }
+
+.catalog-footnote{
+  margin-top:36px; padding:18px 22px; background:var(--sand-100); border-radius:var(--radius-m);
+  font-size:.85rem; color:var(--soil-600); text-align:center;
+}
+.catalog-footnote strong{ color:var(--green-900); }
 
 .empty-state{ text-align:center; padding:40px 0; color:var(--soil-600); font-weight:600; }
 
@@ -430,61 +461,77 @@ p{ margin:0 0 1em; }
   background:var(--sand-50);
 }
 
-.payment-detail{ background:#fff; border-radius:var(--radius-m); padding:26px 28px; box-shadow:var(--shadow-soft); }
-.payment-detail-item h4{ margin-bottom:.5em; }
-.payment-detail-item strong{ color:var(--green-900); }
-.payment-note{ font-size:.85rem; color:var(--soil-600); margin:0; }
-
-/* =============== CTA banner =============== */
-.cta-banner{ background:var(--green-900); color:var(--sand-50); padding-block:70px; margin-top:40px; }
-.cta-inner{ text-align:center; max-width:620px; }
-.cta-inner h2{ color:var(--sand-50); }
-.cta-inner p{ color:var(--sand-100); margin-bottom:28px; }
-
-/* =============== Footer =============== */
-.site-footer{ background:var(--soil-900); color:var(--sand-100); padding-top:60px; }
-.footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:32px; padding-bottom:40px; border-bottom:1px solid rgba(255,255,255,.1); }
-.footer-brand p{ color:#C9BFA9; font-size:.88rem; margin-top:12px; }
-.logo--footer{ color:var(--sand-50); }
-.logo--footer .logo-mark{ color:var(--green-300); }
-.footer-col h4{ color:var(--sand-50); font-size:.95rem; margin-bottom:14px; }
-.footer-col{ display:flex; flex-direction:column; gap:10px; }
-.footer-col a{ color:#C9BFA9; font-size:.88rem; transition:color .2s ease; }
-.footer-col a:hover{ color:var(--sand-50); }
-.footer-bottom{ padding-block:22px; font-size:.8rem; color:#8B8270; text-align:center; }
-
-/* =============== Back to top =============== */
-.to-top{
-  position:fixed; right:22px; bottom:22px; width:46px; height:46px; border-radius:50%;
-  background:var(--green-700); color:#fff; font-size:1.2rem; box-shadow:var(--shadow-soft);
-  opacity:0; visibility:hidden; transform:translateY(10px); transition:all .3s ease; z-index:90;
+/* =============== QRIS =============== */
+.qris-box{ display:flex; gap:20px; align-items:flex-start; }
+.qris-img{
+  width:170px; flex-shrink:0; border-radius:var(--radius-s); border:1.5px solid var(--sand-line);
+  box-shadow:var(--shadow-soft);
 }
-.to-top.is-visible{ opacity:1; visibility:visible; transform:translateY(0); }
-.to-top:hover{ background:var(--green-900); transform:translateY(-3px); }
+.qris-info{ display:flex; flex-direction:column; gap:8px; }
+.qris-info p{ margin:0; font-size:.88rem; color:var(--soil-600); }
+.qris-info strong{ color:var(--green-900); }
 
-/* =============== Mobile ================= */
-@media (max-width:900px){
-  .hero-inner{ grid-template-columns:1fr; }
-  .hero-art{ order:-1; }
-  .footer-grid{ grid-template-columns:1fr 1fr; }
-}
 
-@media (max-width:760px){
-  .main-nav{
-    position:fixed; inset:70px 16px auto 16px; background:#fff; border-radius:var(--radius-m);
-    box-shadow:var(--shadow-hover); flex-direction:column; padding:14px; gap:4px;
-    transform:translateY(-14px); opacity:0; visibility:hidden; transition:all .3s ease; z-index:99;
+/* =========================================================
+   MOBILE — Katalog lebih rapi & ringkas di HP
+   (grid 2 kolom, kartu lebih padat, filter bisa digeser)
+========================================================= */
+@media (max-width:700px){
+
+  /* Section jadi lebih pendek biar nggak kepanjangan scroll-nya */
+  .section{ padding-block:44px; }
+  .section-head{ margin-bottom:22px; }
+  .section-head h2{ font-size:1.5rem; }
+  .section-desc{ font-size:.92rem; }
+  .hero{ padding-block:36px 24px; }
+  .hero-cta{ margin-bottom:24px; }
+  .hero-stats{ gap:20px; }
+
+  /* Filter kategori: satu baris, geser ke samping (swipe), tidak makan tempat vertikal */
+  .filter-bar{
+    flex-wrap:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch;
+    margin-inline:-24px; padding-inline:24px; padding-bottom:8px; margin-bottom:20px;
+    scrollbar-width:none;
   }
-  .main-nav.is-open{ transform:translateY(0); opacity:1; visibility:visible; }
-  .main-nav a{ padding:12px 14px; border-radius:10px; }
-  .main-nav a:hover{ background:var(--sand-100); }
-  .nav-toggle{ display:flex; }
-  .trust-grid{ justify-content:center; text-align:center; }
-  .footer-grid{ grid-template-columns:1fr; }
+  .filter-bar::-webkit-scrollbar{ display:none; }
+  .chip{ flex:0 0 auto; padding:8px 14px; font-size:.82rem; white-space:nowrap; }
+
+  /* Katalog produk: grid 2 kolom seperti marketplace, kartu dipadatkan */
+  .product-grid{ grid-template-columns:repeat(2,1fr); gap:12px; }
+  .product-card{ border-radius:14px; }
+  .product-thumb{ aspect-ratio:1/1; }
+  .product-badge{ top:8px; left:8px; font-size:.62rem; padding:4px 9px; }
+  .wish-btn{ width:28px; height:28px; top:8px; right:8px; }
+  .wish-btn svg{ width:14px; height:14px; }
+
+  .product-info{ padding:10px 11px 12px; gap:4px; }
+  .product-info h3{ font-size:.86rem; line-height:1.25; margin-bottom:0; }
+  .category-tag{ font-size:.58rem; padding:2px 8px; }
+  .product-desc{
+    font-size:.72rem; margin-bottom:2px;
+    display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+  }
+
+  /* Rincian varian harga disembunyikan di kartu (biar tidak panjang);
+     tetap bisa dipilih lewat dropdown varian yang otomatis muncul di bawah */
+  .price-list{ display:none; }
+  .price-note{ display:none; }
+  .variant-select{ font-size:.72rem; padding:7px 9px; margin-top:8px; }
+
+  .product-bottom{ flex-direction:column; align-items:stretch; gap:6px; margin-top:10px; }
+  .price{ font-size:.92rem; text-align:center; }
+  .btn-add{ width:100%; text-align:center; padding:8px 12px; font-size:.76rem; }
+
+  .catalog-footnote{ font-size:.78rem; padding:14px 16px; margin-top:22px; }
+
+  /* Metode pembayaran & QRIS lebih ringkas di HP */
+  .payment-grid{ grid-template-columns:repeat(2,1fr); gap:10px; }
+  .payment-card{ padding:14px 12px; }
+  .payment-detail{ padding:18px 16px; }
 }
 
-/* =============== Reduced motion =============== */
-@media (prefers-reduced-motion:reduce){
-  *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
-  html{ scroll-behavior:auto; }
+/* Layar sangat sempit (<380px): balik ke 1 kolom biar kartu tidak terlalu kecil */
+@media (max-width:380px){
+  .product-grid{ grid-template-columns:1fr; }
+  .product-thumb{ aspect-ratio:4/3; }
 }

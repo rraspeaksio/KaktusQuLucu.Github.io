@@ -53,11 +53,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const filter = btn.dataset.filter;
     let visibleCount = 0;
     productCards.forEach(card => {
-      const match = filter === 'all' || card.dataset.category === filter;
+      const cats = card.dataset.category.split(' ');
+      const match = filter === 'all' || cats.includes(filter);
       card.style.display = match ? '' : 'none';
       if (match) visibleCount++;
     });
     emptyState.hidden = visibleCount !== 0;
+
+    // Geser chip yang aktif supaya kelihatan (berguna di HP saat filter-bar bisa digeser)
+    if (btn.scrollIntoView) btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
   });
 
   /* ---------- Wishlist (suka) ---------- */
