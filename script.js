@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const CONFIG = {
     // Ganti dengan nomor WhatsApp admin format internasional tanpa "+" atau "0" di depan
-    whatsappNumber: '628123456789'
+    whatsappNumber: '6281317636237'
   };
 
   const STORAGE_KEY = 'kaktus_cart_v1';
