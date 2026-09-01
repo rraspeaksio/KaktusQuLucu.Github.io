@@ -154,6 +154,10 @@
           <a href="#koleksi" class="btn btn-primary">Lihat Koleksi Kaktus</a>
           <a href="#cara-belanja" class="btn btn-ghost">Cara Belanja</a>
         </div>
+        <a href="https://drive.google.com/drive/folders/1U5uNkkH-AS08zj2VM0Zq5tXza7rHK8Go?usp=sharing" target="_blank" rel="noopener" class="hero-scan-badge reveal">
+          <img src="img/qris-katalog-lengkap.jpg" alt="Scan barcode untuk Katalog Lengkap KaktusQuLucu" loading="lazy">
+          <span><strong>Scan Barcode Ini</strong> untuk lihat lebih banyak produk di Katalog Lengkap kami ↗</span>
+        </a>
         <div class="hero-stats">
           <div><strong>500+</strong><span>Kaktus terkirim</span></div>
           <div><strong>4.9/5</strong><span>Rating pembeli</span></div>
@@ -240,6 +244,19 @@
           <strong>Katalog Custom</strong> KaktusQuLucu. Semua tanaman (kaktus/sukulen) dikirim dalam kondisi
           random sesuai stok, dan bisa custom tema, warna, serta jumlah — termasuk harga grosir untuk
           pemesanan ≥100 pcs.</p>
+      </div>
+
+      <!-- Promo: Katalog Lengkap (Google Drive) -->
+      <div class="catalog-promo reveal">
+        <img src="img/qris-katalog-lengkap.jpg" alt="Scan untuk buka Katalog Lengkap KaktusQuLucu di Google Drive" class="catalog-promo-qr" loading="lazy">
+        <div class="catalog-promo-info">
+          <p class="catalog-promo-tag">✨ Pilihan Lebih Banyak</p>
+          <h3>Lihat Katalog Lengkap Kami</h3>
+          <p>Produk di bawah ini cuma sebagian. Scan atau klik tombol untuk lihat <strong>semua varian, warna &amp; tema</strong> Sand Art, Ecosystem Jar, sampai Souvenir KaktusQuLucu.</p>
+          <a href="https://drive.google.com/drive/folders/1U5uNkkH-AS08zj2VM0Zq5tXza7rHK8Go?usp=sharing" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Buka Katalog Lengkap ↗</a>
+          <button type="button" class="catalog-promo-link js-order-other">atau langsung isi form pesan produk lain →</button>
+          <p class="catalog-promo-hint">Suka produk yang tidak ada di katalog web ini? Tulis saja nama/temanya di kolom <strong>“Produk Lain”</strong> saat checkout, nanti dibantu Admin 🌵</p>
+        </div>
       </div>
 
       <!-- Filter kategori (geser ke samping di HP) -->
@@ -875,6 +892,13 @@
       <a href="#">Email: halo@kaktusqulucu.id</a>
       <a href="https://www.google.com/maps/search/?api=1&query=Cluster+Pesona+Orlando+Blok+RA4+No.+17+Kota+Wisata+Cibubur+Gunung+Putri+Kabupaten+Bogor" target="_blank" rel="noopener">📍 Cluster Pesona Orlando, Blok RA4 No. 17, Kota Wisata Cibubur, Gunung Putri, Kab. Bogor</a>
     </div>
+    <div class="footer-col footer-col--qr">
+      <h4>Katalog Lengkap</h4>
+      <a href="https://drive.google.com/drive/folders/1U5uNkkH-AS08zj2VM0Zq5tXza7rHK8Go?usp=sharing" target="_blank" rel="noopener" class="footer-qr-link">
+        <img src="img/qris-katalog-lengkap.jpg" alt="Scan barcode untuk Katalog Lengkap KaktusQuLucu" loading="lazy">
+        <span>Scan / klik untuk lihat semua produk kami</span>
+      </a>
+    </div>
   </div>
   <div class="wrap footer-bottom">
     <p>© 2026 KaktusQuLucu. Dibuat dengan 🌵 dan secangkir kopi.</p>
@@ -908,6 +932,7 @@
     <p class="cart-note">Ongkir & diskon grosir dihitung admin saat konfirmasi.</p>
     <button class="btn btn-primary btn-block" id="goToCheckoutBtn" disabled>Lanjut ke Pembayaran</button>
     <button class="btn btn-ghost btn-block" id="continueShoppingBtn">Lanjut Belanja</button>
+    <button type="button" class="cart-other-link js-order-other">Mau pesan produk lain di luar katalog ini? Klik di sini</button>
   </div>
 </aside>
 
@@ -924,8 +949,9 @@
     <div class="checkout-body">
 
       <!-- Ringkasan pesanan -->
-      <section class="checkout-section">
+      <section class="checkout-section" id="checkoutSummarySection">
         <h4>Ringkasan Pesanan</h4>
+        <p class="checkout-empty-note" id="checkoutEmptyNote" hidden>Belum ada produk dari katalog web di keranjang. Tidak apa — isi kolom <strong>“Produk Lain”</strong> di bawah untuk pesan produk dari Katalog Lengkap atau request custom 🌵</p>
         <div id="checkoutItems" class="checkout-items"></div>
         <div class="cart-total-row cart-total-row--big">
           <span>Total</span>
@@ -957,6 +983,9 @@
           </label>
           <label>Catatan (opsional)
             <textarea id="buyerNote" rows="2" placeholder="Custom tema, warna, request tulisan kartu, dll."></textarea>
+          </label>
+          <label class="label-highlight">Produk Lain <span class="label-hint">— di luar katalog web ini? Cek dulu <a href="https://drive.google.com/drive/folders/1U5uNkkH-AS08zj2VM0Zq5tXza7rHK8Go?usp=sharing" target="_blank" rel="noopener">Katalog Lengkap</a></span>
+            <textarea id="buyerOtherItems" rows="2" placeholder="Contoh: Sand Art Goblet warna biru x2 (lihat di Katalog Lengkap), atau request lain di luar daftar web ini"></textarea>
           </label>
         </div>
       </section>
@@ -1010,7 +1039,7 @@
         </div>
       </section>
 
-      <p class="checkout-error" id="checkoutError" hidden>Yuk lengkapi nama, no. WhatsApp, dan alamat dulu ya 🌵</p>
+      <p class="checkout-error" id="checkoutError" hidden>Yuk lengkapi nama, no. WhatsApp, dan alamat dulu ya — kalau keranjang kosong, isi juga kolom "Produk Lain" 🌵</p>
 
       <button class="btn btn-primary btn-block" id="sendOrderBtn">
         <svg width="18" height="18"><use href="#icon-cod"/></svg>

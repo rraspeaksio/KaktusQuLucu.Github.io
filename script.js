@@ -92,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const checkoutModal = document.getElementById('checkoutModal');
   const checkoutItemsEl = document.getElementById('checkoutItems');
   const checkoutTotalEl = document.getElementById('checkoutTotal');
+  const checkoutEmptyNote = document.getElementById('checkoutEmptyNote');
 
   const formatRp = (n) => 'Rp' + n.toLocaleString('id-ID');
 
@@ -157,18 +158,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const shippingCost = () => parseInt(shippingZoneEl.value, 10) || 0;
 
   function renderCheckoutSummary() {
+    checkoutEmptyNote.hidden = cart.length !== 0;
     checkoutItemsEl.innerHTML = cart.map(item => `
       <div class="checkout-item-row">
         <span>${item.name} × ${item.qty}</span>
         <strong>${formatRp(item.price * item.qty)}</strong>
       </div>
-    `).join('') + `
+    `).join('') + (cart.length ? `
       <div class="checkout-item-row">
         <span>Ongkos kirim</span>
         <strong>${formatRp(shippingCost())}</strong>
       </div>
-    `;
-    checkoutTotalEl.textContent = formatRp(cartTotal() + shippingCost());
+    ` : '');
+    checkoutTotalEl.textContent = cart.length ? formatRp(cartTotal() + shippingCost()) : 'Dikonfirmasi Admin';
   }
 
   shippingZoneEl.addEventListener('change', renderCheckoutSummary);
@@ -284,8 +286,8 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('continueShoppingBtn').addEventListener('click', closeCart);
 
   /* ---------- Buka / tutup checkout ---------- */
-  function openCheckout() {
-    if (cart.length === 0) return;
+  function openCheckout(allowEmpty) {
+    if (cart.length === 0 && !allowEmpty) return;
     renderCheckoutSummary();
     closeCart();
     checkoutModal.classList.add('is-open');
@@ -297,8 +299,17 @@ document.addEventListener('DOMContentLoaded', () => {
     checkoutModal.setAttribute('aria-hidden', 'true');
     drawerOverlay.classList.remove('is-open');
   }
-  document.getElementById('goToCheckoutBtn').addEventListener('click', openCheckout);
+  document.getElementById('goToCheckoutBtn').addEventListener('click', () => openCheckout(false));
   document.getElementById('checkoutCloseBtn').addEventListener('click', closeCheckout);
+
+  // Tombol "pesan produk lain" — buka form checkout meski keranjang kosong,
+  // supaya pembeli bisa order barang dari Katalog Lengkap / request custom.
+  document.querySelectorAll('.js-order-other').forEach(btn => {
+    btn.addEventListener('click', () => {
+      openCheckout(true);
+      setTimeout(() => document.getElementById('buyerOtherItems')?.focus(), 350);
+    });
+  });
 
   drawerOverlay.addEventListener('click', () => {
     closeCart();
@@ -353,28 +364,42 @@ document.addEventListener('DOMContentLoaded', () => {
     const phone = document.getElementById('buyerPhone').value.trim();
     const address = document.getElementById('buyerAddress').value.trim();
     const note = document.getElementById('buyerNote').value.trim();
+    const otherItems = document.getElementById('buyerOtherItems').value.trim();
 
-    if (!name || !phone || !address || cart.length === 0) {
+    if (!name || !phone || !address || (cart.length === 0 && !otherItems)) {
       checkoutError.hidden = false;
       return;
     }
     checkoutError.hidden = true;
 
-    const itemLines = cart.map(item =>
-      `- ${item.name} x${item.qty} = ${formatRp(item.price * item.qty)}`
-    ).join('\n');
     const shipping = shippingCost();
     const zoneLabel = shippingZoneEl.options[shippingZoneEl.selectedIndex].textContent;
 
-    const message =
-`Halo KaktusQuLucu, saya mau pesan 🌵
-
-*Detail Pesanan:*
+    let orderBlock;
+    if (cart.length) {
+      const itemLines = cart.map(item =>
+        `- ${item.name} x${item.qty} = ${formatRp(item.price * item.qty)}`
+      ).join('\n');
+      orderBlock =
+`*Detail Pesanan (Katalog Web):*
 ${itemLines}
 
 Subtotal: ${formatRp(cartTotal())}
 Ongkir (${zoneLabel}): ${formatRp(shipping)}
-*Total: ${formatRp(cartTotal() + shipping)}*
+*Total: ${formatRp(cartTotal() + shipping)}*`;
+    } else {
+      orderBlock = `*Detail Pesanan:* (tidak ada dari katalog web, lihat "Produk Lain" di bawah)
+Wilayah: ${zoneLabel}`;
+    }
+
+    const otherBlock = otherItems
+      ? `\n\n*Produk Lain (di luar katalog web ini):*\n${otherItems}`
+      : '';
+
+    const message =
+`Halo KaktusQuLucu, saya mau pesan 🌵
+
+${orderBlock}${otherBlock}
 *Metode Bayar:* ${paymentLabels[selectedPayment]}
 
 *Data Pengiriman:*
